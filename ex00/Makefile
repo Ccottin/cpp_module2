@@ -12,7 +12,7 @@
 
 NAME	= meditatingNumbers
 
-SRCS	= main.cpp Fixed.hpp Fixed.cpp
+SRCS	= main.cpp Fixed.cpp
 
 CC	= c++
 
