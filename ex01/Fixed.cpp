@@ -3,13 +3,27 @@
 #include <iostream>
 #include <cmath>
 
+float	power(int value, int power)
+{
+	int	i;
+	int	res;
+
+	res = 1;
+	i = 0;
+	while (i < power)
+	{
+		res *= value;
+		i++;
+	}
+	return (res);
+}
 Fixed::Fixed(void) : _number(0) { 
 	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(int const n) {
 	std::cout << "Int constructor called" <<std::endl;
-	this->_number = n * (2^this->_bits);	
+	this->_number = n * power(2, this->_bits);	
 }
 
 Fixed::Fixed(float const n) {
@@ -17,7 +31,7 @@ std::cout << "Float constructor called" <<std::endl;
 
 	float	temp;
 	
-	temp = n * (float)(2^(this->_bits));
+	temp = n * power(2, this->_bits);	
 	this->_number = roundf(temp);
 }
 
@@ -54,12 +68,12 @@ void	Fixed::setRawBits(int const raw) {
 }
 
 int	Fixed::toInt(void) const {
-	return (this->_number / (2^this->_bits));
+	return (this->_number / power(2, this->_bits));
 }
 float	Fixed::toFloat(void) const {
 	
 	float	temp;
 
-	temp = this->_number / (float)(2^this->_bits);
+	temp = this->_number / power(2, this->_bits);
 	return (temp);
 }
