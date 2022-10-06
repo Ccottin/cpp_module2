@@ -51,15 +51,17 @@ void	ft_test_int(void) {
 	Fixed c;
 
 	c = a + b;
-	std::cout << c << std::endl;
+	std::cout << c << " should be 42" << std::endl;
 	c = a - b;
-	std::cout << c << std::endl;
+	std::cout << c << " should be -36" << std::endl;
 	c = a * b;
-	std::cout << c << std::endl;
+	std::cout << c << " should be 117" <<  std::endl;
 	c = a / b;
-	std::cout << c << std::endl;
+	std::cout << c << " should be " << a/b <<  std::endl;
 	c = a + a;
-	std::cout << c << std::endl;
+	std::cout << c << " should be 6" << std::endl;
+	a = a - a;
+	std::cout << a << " should be 0" << std::endl;
 }
 
 void	ft_test_arithmetics(void) {
@@ -68,21 +70,58 @@ void	ft_test_arithmetics(void) {
 	Fixed c;
 
 	c = a + b;
-	std::cout << c << std::endl;
+	std::cout << c << " should be 2" << std::endl;
 	c = a - b;
-	std::cout << c << std::endl;
+	std::cout << c << " should be 1" << std::endl;
 	c = a * b;
-	std::cout << c << std::endl;
+	std::cout << c << " should be 0.75" << std::endl;
 	c = a / b;
-	std::cout << c << std::endl;
+	std::cout << c << " should be 3" << std::endl;
 	c = a + a;
-	std::cout << c << std::endl;
+	std::cout << c << " should be 3" << std::endl;
+	a = a - a;
+	std::cout << a << " should be 0" << std::endl;
 	ft_test_int();
+}
+
+void	ft_test_iterators(void)
+{
+	 Fixed a;
+
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a-- << std::endl;
+	std::cout << a << std::endl;
+	std::cout << --a << std::endl;
+}
+
+void	ft_test_minmax(void)
+{
+	{
+		Fixed a(8.5f);
+		Fixed b(8.3f);
+	
+		std::cout << Fixed::min(a, b) << std::endl;
+	}
+	{
+		Fixed const a(8.5f);
+		Fixed const b(8.3f);
+	
+		std::cout << Fixed::min(a, b) << std::endl;
+	}
+	{
+		Fixed a(8.5f);
+		Fixed b(8.3f);
+	
+		std::cout << Fixed::max(a, b) << std::endl;
+	}
 }
 
 int	main( void ) {
 
-/*	Fixed	a; Division broken et negatifs ne fonctionnent pas
+	Fixed	a;
 	Fixed	const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
 	std::cout << a << std::endl;
@@ -92,8 +131,9 @@ int	main( void ) {
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
-*/
 //	ft_test_comparisons();
-	ft_test_arithmetics();
+//	ft_test_arithmetics();
+//	ft_test_iterators();
+	ft_test_minmax();
 	return (0);
 }
