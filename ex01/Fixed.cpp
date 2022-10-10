@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ccottin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/10 21:53:30 by ccottin           #+#    #+#             */
+/*   Updated: 2022/10/10 21:53:40 by ccottin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <string>
 #include <iostream>
@@ -5,24 +17,24 @@
 
 float	power(int value, int power)
 {
-	int	i;
 	int	res;
 
 	res = 1;
-	i = 0;
-	while (i < power)
+	while (0 < power)
 	{
 		res *= value;
-		i++;
+		power--;
 	}
 	return (res);
 }
+
 Fixed::Fixed(void) : _number(0) { 
 	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(int const n) {
 	std::cout << "Int constructor called" <<std::endl;
+
 	this->_number = n * power(2, this->_bits);	
 }
 
@@ -72,8 +84,5 @@ int	Fixed::toInt(void) const {
 }
 float	Fixed::toFloat(void) const {
 	
-	float	temp;
-
-	temp = this->_number / power(2, this->_bits);
-	return (temp);
+	return (this->_number / power(2, this->_bits));
 }

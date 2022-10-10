@@ -6,11 +6,11 @@
 #    By: ccottin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/03 12:16:24 by ccottin           #+#    #+#              #
-#    Updated: 2022/10/01 01:37:52 by ccottin          ###   ########.fr        #
+#    Updated: 2022/10/10 21:17:01 by ccottin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= elevatingNumbers
+NAME	= illuminatedNumbers
 
 SRCS	= main.cpp Fixed.cpp
 

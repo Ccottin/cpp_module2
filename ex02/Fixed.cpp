@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ccottin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/10 22:39:36 by ccottin           #+#    #+#             */
+/*   Updated: 2022/10/10 22:39:52 by ccottin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <string>
 #include <iostream>
@@ -206,8 +218,17 @@ Fixed	&Fixed::min(Fixed &f, Fixed &g) {
 	else
 		return (g);
 }
-Fixed	&Fixed::min(Fixed const &f, Fixed const &g) {
-	return (Fixed::min(f, g));	
+Fixed	Fixed::min(Fixed const &f, Fixed const &g) {
+	if (f.getRawBits() < g.getRawBits())
+	{
+		Fixed	Temp(f);
+		return (Temp);
+	}
+	else
+	{
+		Fixed	Temp(g);
+		return (Temp);
+	}
 }
 
 Fixed	&Fixed::max(Fixed &f, Fixed &g) {
@@ -217,13 +238,15 @@ Fixed	&Fixed::max(Fixed &f, Fixed &g) {
 		return (g);
 }
 
-Fixed	&Fixed::max(Fixed const &f, Fixed const &g) {
-	return (Fixed::max(f, g));	
-}
-/*
-static Fixed	&max(Fixed const &f, Fixed const &g) {
+Fixed	Fixed::max(Fixed const &f, Fixed const &g) {
 	if (f.getRawBits() > g.getRawBits())
-		return (f);
+	{
+		Fixed	Temp(f);
+		return (Temp);
+	}
 	else
-		return (g);
-}*/
+	{
+		Fixed	Temp(g);
+		return (Temp);
+	}
+}

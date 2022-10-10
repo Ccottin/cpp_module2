@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ccottin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/10 22:39:40 by ccottin           #+#    #+#             */
+/*   Updated: 2022/10/10 22:39:43 by ccottin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
@@ -41,9 +53,9 @@ class	Fixed {
 	void	setRawBits(int const raw);
 
 	static Fixed	&min(Fixed &f, Fixed &g);
-	static Fixed	&min(Fixed const &f, Fixed const &g);
+	static Fixed 	min(Fixed const &f, Fixed const &g);
 	static Fixed	&max(Fixed &f, Fixed &g);
-	static Fixed	&max(Fixed const &f, Fixed const &g);
+	static Fixed 	max(Fixed const &f, Fixed const &g);
 
 	private :
 
@@ -58,8 +70,7 @@ std::ostream &	operator<<(std::ostream & stream, Fixed const & f);
 /* Les surchages d operateurs d operation arithmetiques renvoient un Objet */
 /* non pas une reference, car elle pointerait sur une variable locale, et  */
 /* nous on cherche a obtenir le resultat d une opearation entre deux objets*/
-/* il serait donc pas possible de recuperer le resultat, dnc on appelle un */
-/* constructeur 							   */
+/* il serait pas possible de recuperer le resultat sans constructeur 	   */
 
 /* Les fonctions statics n'ont pas de pointeur this, et le mot cle const   */
 /* affecte le pointeur this de la classe, une fonction membre ne peut pas  */

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ccottin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/10 22:39:31 by ccottin           #+#    #+#             */
+/*   Updated: 2022/10/10 22:39:46 by ccottin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <iostream>
 
@@ -104,17 +116,27 @@ void	ft_test_minmax(void)
 		Fixed b(8.3f);
 	
 		std::cout << Fixed::min(a, b) << std::endl;
+		std::cout << Fixed::max(a, b) << std::endl;
 	}
 	{
 		Fixed const a(8.5f);
 		Fixed const b(8.3f);
 	
 		std::cout << Fixed::min(a, b) << std::endl;
+		std::cout << Fixed::max(a, b) << std::endl;
 	}
 	{
-		Fixed a(8.5f);
-		Fixed b(8.3f);
+		Fixed a(-8);
+		Fixed b(-3);
 	
+		std::cout << Fixed::min(a, b) << std::endl;
+		std::cout << Fixed::max(a, b) << std::endl;
+	}
+	{
+		Fixed const a(-8);
+		Fixed const b(-3);
+	
+		std::cout << Fixed::min(a, b) << std::endl;
 		std::cout << Fixed::max(a, b) << std::endl;
 	}
 }
@@ -134,6 +156,6 @@ int	main( void ) {
 //	ft_test_comparisons();
 //	ft_test_arithmetics();
 //	ft_test_iterators();
-	ft_test_minmax();
+//	ft_test_minmax();
 	return (0);
 }
