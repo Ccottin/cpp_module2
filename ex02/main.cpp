@@ -6,7 +6,7 @@
 /*   By: ccottin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:39:31 by ccottin           #+#    #+#             */
-/*   Updated: 2022/10/10 22:39:46 by ccottin          ###   ########.fr       */
+/*   Updated: 2022/10/10 22:57:33 by ccottin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,40 @@ void	ft_test_minmax(void)
 	}
 }
 
+void	ft_test_final(void)
+{
+	Fixed a(0);
+	Fixed b(0.0f);
+
+	std::cout << std::endl << "All thoses should be zero" << std::endl;
+	std::cout << a.toInt() << std::endl;
+	std::cout << a.toFloat() << std::endl;
+	std::cout << b.toInt() << std::endl;
+	std::cout << a.toFloat() << std::endl;
+	std::cout << a * b << std::endl;
+	std::cout << a / b << "   Exept for this one, who tends to be infinite" << std::endl;
+	std::cout << a + b << std::endl;
+	std::cout << a - b << std::endl;
+	if (a < b)
+		std::cout << "fail" << std::endl;
+	if (a > b)
+		std::cout << "fail" << std::endl;
+	if (a != b)
+		std::cout << "fail" << std::endl;
+	if (a <= b)
+		std::cout << "pass" << std::endl;
+	if (a >= b)
+		std::cout << "pass" << std::endl;
+	if (a == b)
+		std::cout << "pass" << std::endl;
+	a++;
+	std::cout << a << std::endl;
+	b++;
+	std::cout << b << std::endl;
+	std::cout << Fixed::min( a, b++ ) << std::endl;
+	std::cout << Fixed::min( ++a, b ) << std::endl;
+}
+
 int	main( void ) {
 
 	Fixed	a;
@@ -157,5 +191,6 @@ int	main( void ) {
 //	ft_test_arithmetics();
 //	ft_test_iterators();
 //	ft_test_minmax();
+//	ft_test_final();
 	return (0);
 }
