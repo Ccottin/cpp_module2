@@ -6,7 +6,7 @@
 /*   By: ccottin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:39:31 by ccottin           #+#    #+#             */
-/*   Updated: 2022/10/10 22:57:33 by ccottin          ###   ########.fr       */
+/*   Updated: 2022/10/11 17:55:40 by ccottin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,10 +187,10 @@ int	main( void ) {
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
-//	ft_test_comparisons();
-//	ft_test_arithmetics();
-//	ft_test_iterators();
-//	ft_test_minmax();
-//	ft_test_final();
+	ft_test_comparisons();
+	ft_test_arithmetics();
+	ft_test_iterators();
+	ft_test_minmax();
+	ft_test_final();
 	return (0);
 }
